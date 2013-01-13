@@ -40,7 +40,7 @@ void File::close()
 
 int64_t File::read(void *buffer, uint64_t length)
 {
-    int64_t result = PHYSFS_readBytes(m_phys_handle, buffer, length);
+    int64_t result = PHYSFS_read(m_phys_handle, buffer, 1, length);
 
     if (result < 0) {
         throw_error;    // only explode on total failure
@@ -51,7 +51,7 @@ int64_t File::read(void *buffer, uint64_t length)
 
 int64_t File::write(const void *buffer, uint64_t length)
 {
-    int64_t result = PHYSFS_writeBytes(m_phys_handle, buffer, length);
+    int64_t result = PHYSFS_write(m_phys_handle, buffer, 1, length);
 
     if (result < length) {
         throw_error;    // is this too drastic?
