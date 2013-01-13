@@ -1,7 +1,7 @@
 #ifndef ROSTER_ENTRY_H
 #define ROSTER_ENTRY_H
 
-#include <jsoncpp/json/json.h>
+#include <jsoncpp/json.h>
 #include <string>
 
 #include "data.h"
